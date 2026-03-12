@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "AI Reading Assistant",
+  "version": "1.0",
+  "description": "Enhance learning with an accessible reader mode and AI explanations.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "ui/popup.html",
+    "default_icon": {
+      "48": "icons/icon_default.png"
+    }
+  },
+  "commands": {
+    "toggle-ai-assistant": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A",
+        "mac": "Command+Shift+A"
+      },
+      "description": "Toggle the AI Assistant overlay"
+    }
+  }
+}

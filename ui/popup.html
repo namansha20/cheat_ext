@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Reading Assistant Settings</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>AI Reading Assistant</h2>
+        </header>
+        
+        <main>
+            <div class="form-group">
+                <label for="apiKey">Gemini API Key</label>
+                <input type="password" id="apiKey" placeholder="AIzaSy..." />
+                <small>Get a key from Google AI Studio. Saved locally.</small>
+            </div>
+            
+            <div class="form-group enable-toggle-box">
+                <label class="switch-container">
+                    <input type="checkbox" id="unblockToggle">
+                    <span class="slider"></span>
+                    <strong class="toggle-text">Enable Context Menu & Selection</strong>
+                </label>
+                <small style="margin-top: 8px;">Adds an option to the right-click menu to manually unlock the current page.</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="autoHost">Auto-Unlock Hostname</label>
+                <div style="display:flex; gap: 5px;">
+                    <input type="text" id="autoHost" placeholder="e.g. faceprep.online" />
+                    <button id="addHostBtn" style="padding: 5px 10px; background: #6c757d; color: white; border: none; border-radius:4px; cursor: pointer;">Add</button>
+                </div>
+                <div id="hostList" style="margin-top: 10px; max-height: 100px; overflow-y: auto; font-size: 13px;">
+                    <!-- Host list populates here -->
+                </div>
+            </div>
+
+            <button id="saveBtn" class="primary-btn">Save Settings</button>
+            <div id="statusMessage" class="status-msg hidden">Saved successfully!</div>
+        </main>
+        
+        <footer>
+            <p><strong>Shortcut:</strong> Ctrl+Shift+A (Mac: Cmd+Shift+A)</p>
+            <p><strong>Context Menu:</strong> Right-click selected text</p>
+        </footer>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
